@@ -45,6 +45,22 @@ nav{
     font-size: 3rem;
 }
 
+#projects {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: black;
+  }
+
+.project-tile {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+}
+
 .project-tile img {
     width: 20rem;
 }
