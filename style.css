@@ -6,16 +6,17 @@ html{
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-size: 62.5%;
+    font-family: sans-serif;
 }
 nav{
     position: fixed;
     display: flex;
     justify-content: flex-end;
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
     top: 0;
     left: 0;
     width: 100%;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
     z-index: 10;
 }
 
@@ -29,13 +30,13 @@ nav{
     display:block;
     font-size: 2rem;
     padding: 2rem;
-    color: white;
+    color: rgb(0, 14, 77);
     text-decoration: none;
 }
 
 #navbar a:hover{
-    background-color: black;
-    
+    background-color: rgb(0, 14, 77);
+    color: white;
 }
 
 #welcome-section{
@@ -44,19 +45,32 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(62deg, #ffffff 60%, #838383 100%);
+    background-image: linear-gradient(180deg, rgb(34, 54, 143) 10%, rgb(92, 114, 212) 100%);
 }
 
 #welcome-section h1{
     font-size: 3rem;
+    color: white
+}
+
+#welcome-section h2{
+    padding-top: 10px;
+    font-weight: 500;
+    color: white
 }
 
 #projects {
     text-align: center;
     padding: 5rem 2rem;
-    background: black;
-    height: 75vh;
-  }
+    background: white;
+    height: 100vh;
+}
+
+#projects h1{
+    font-size: 3rem;
+    color: black;
+    padding-bottom: 50px;
+}
 
 .project-tile {
     display: grid;
@@ -69,7 +83,12 @@ nav{
 }
 
 .project-tile img {
-    width: 20rem;
+    width: 30rem;
+}
+
+figcaption{
+    color: black;
+    font-size: 1.5rem;
 }
 
 #contact {
@@ -79,12 +98,13 @@ nav{
     align-items: center;
     text-align: center;
     width: 100%;
-    height: 80vh;
+    height: 40vh;
     padding: 0 2rem;
-    background: #303841;
+    background: rgb(34, 55, 151);
+    background-image: linear-gradient(180deg, rgb(34, 54, 143) 10%, rgb(92, 114, 212) 100%);
 }
 
-h1 {
+#contact h1 {
     font-size: 3rem;
     color: #fff;
 }
@@ -111,10 +131,19 @@ a {
 
 .contact-details {
     font-size: 2.4rem;
-    text-shadow: 2px 2px 1px #1f1f1f;
     transition: transform 0.3s ease-out;
 }
   
 .contact-details:hover {
-    transform: translateY(8px);
+    transform: translateY(5px);
 }
+
+@media screen and (max-width: 50em) {
+    .contactlinks {
+      flex-direction: column;
+      align-items: center;
+    }
+    #welcome-section {
+        background-image: linear-gradient(0deg, rgb(34, 54, 143) 10%, rgb(92, 114, 212) 100%);
+    }
+  }
