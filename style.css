@@ -97,7 +97,6 @@ figcaption{
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100%;
     height: 40vh;
     padding: 0 2rem;
     background: rgb(34, 55, 151);
@@ -117,7 +116,6 @@ a {
 .contactlinks {
     display: flex;
     justify-content: center;
-    width: 100%;
     max-width: 980px;
     margin-top: 4rem;
     flex-wrap: wrap;
