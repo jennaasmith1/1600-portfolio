@@ -63,7 +63,7 @@ nav{
     text-align: center;
     padding: 5rem 2rem;
     background: white;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 #projects h1{
@@ -101,7 +101,7 @@ figcaption{
     height: 40vh;
     padding: 0 2rem;
     background: rgb(34, 55, 151);
-    background-image: linear-gradient(180deg, rgb(34, 54, 143) 10%, rgb(92, 114, 212) 100%);
+    background-image: linear-gradient(0deg, rgb(34, 54, 143) 10%, rgb(92, 114, 212) 100%);
 }
 
 #contact h1 {
@@ -139,10 +139,7 @@ a {
 }
 
 @media screen and (max-width: 50em) {
-    .contactlinks {
-      flex-direction: column;
-      align-items: center;
-    }
+
     #welcome-section {
         background-image: linear-gradient(0deg, rgb(34, 54, 143) 10%, rgb(92, 114, 212) 100%);
     }
