@@ -142,4 +142,10 @@ a {
     #welcome-section {
         background-image: linear-gradient(0deg, rgb(34, 54, 143) 10%, rgb(92, 114, 212) 100%);
     }
-  }
+}
+
+  @media screen and (max-width: 370px) {
+    .project-tile img {
+        width: 25rem;
+    }
+}
