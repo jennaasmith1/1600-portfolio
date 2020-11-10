@@ -1,0 +1,42 @@
+html{
+    background-image: url(stars.jpg);
+    background-repeat: repeat; 
+}
+
+* {
+    margin: 0px;
+    box-sizing: border-box;    
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    font-family: 'Goldman';font-size: 100px;
+    color:  black;
+    -webkit-text-stroke: 1px #FFE81F;
+}
+
+
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: 'Goldman';font-size: 16px;
+    color:  black;
+    -webkit-text-stroke: 1px #FFE81F;
+}
+
+figure {
+    margin: 2rem;
+
+}
+
+img{
+    filter: drop-shadow(5px 5px 20px #ffffff25);}
+
+figcaption {
+    text-align: center;
+    
+}

@@ -1,0 +1,110 @@
+html{
+	background-color: rgb(188,198,209);
+}
+
+body{
+  background-color: white;
+	width: 960px;
+	margin: 0 auto;
+	padding: 0 20px 0 20px;
+}
+
+header{
+	display: flex;
+	justify-content: center;
+	padding: 20px 0 40px 0;
+}
+
+#profile{
+  display: flex;
+	height: 200px;
+}
+
+#profileText{
+	width: 100%;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#profile img{
+	border: 0px solid red;
+	padding-right: 20px;
+}
+
+#nameDate{
+	color: rgb(72,71,99);
+	display: flex;
+	justify-content: space-between;
+}
+
+#nameDate h1, h2{
+	margin: 0;
+	padding: 0px 0px 20px 0;
+}
+
+.choose {
+	background-color: rgb(196,188,180, .25);
+	padding: 10px;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-around;
+	color: rgb(72,71,99);
+}
+
+.choose h4 {
+	margin-top: 0;
+}
+
+ul {
+	padding-left: 15px;
+	margin: 0;
+}
+
+#techBadges{
+	display:flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+figure{
+	margin: 30px 0px 10px 0px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: rgb(72,71,99);
+}
+
+figure img{
+	max-height: 180px;
+	
+}
+
+figcaption{
+	color: white;
+	width: 175px;
+	background-color: rgb(0,0,0, .5);
+	padding: 5px;
+	position: relative;
+	top:-40px;
+}
+
+#excitedLearn{
+	color: rgb(72,71,99);
+}
+#answer{
+	background-color: rgb(196,188,180, .25);
+	padding: 10px;
+}
+#answer h5{
+	margin: 0;
+}
+footer {
+  text-align: center;
+	color: rgb(72,71,99);
+}
+
+footer p {
+  margin: 0;
+	padding: 10px 0 10px 0;
+}
