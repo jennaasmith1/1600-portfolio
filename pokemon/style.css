@@ -29,7 +29,7 @@ header, h1 {
     padding: 10px;
 }
 
-.createPokemon {
+#createPokemon {
     border: none;
     color: black;
     background-color: white;
@@ -51,7 +51,7 @@ header, h1 {
     
 }
 
-.createPokemon:hover {
+#createPokemon:hover {
     opacity: 0.6;
 }
 

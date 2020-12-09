@@ -13,20 +13,30 @@ async function fechPokemon() {
     const allPokemonData = await getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25`)
     for (const pokemon of allPokemonData.results) {
         const pokeData = await getAPIData(pokemon.url)
-        //console.log(pokemon)
         allPokemon[pokemon.name] = pokeData
     }
     console.log(allPokemon)
     return allPokemon
 }
 
+function getImageNumber(id) {
+    if (id < 10) {
+        return `00${id}`
+    } else if (id > 9 && id < 100) {
+        return `0${id}`
+    } else if (id > 99 && id < 810) {
+        return `${id}`
+    }
+    return `pokeball`
+}
 
-function createCard(pokeName, pokeInfo) {
+
+function createCard(id, pokeName, pokeInfo) {
     const front = document.createElement('div')
     front.classList.add("card__face")
     front.classList.add("card__face--front")
     const img = document.createElement('img')
-    //img.src = `https://github.com/fanzeyi/pokemon.json/blob/master/images/${i + 1}.png.jpg`
+    img.src = "images/" + getImageNumber(id) + ".png"
     const characterName = document.createElement('h2')
     characterName.textContent = pokeName
     front.appendChild(img)
@@ -39,7 +49,7 @@ function createCard(pokeName, pokeInfo) {
     Object.entries(pokeInfo).forEach(attribute => {
         const item = document.createElement('li')
         item.textContent = `${attribute[0]}: ${attribute[1]}`
-    characterInfo.appendChild(item)
+        characterInfo.appendChild(item)
     })
     back.appendChild(characterInfo)
 
@@ -47,27 +57,46 @@ function createCard(pokeName, pokeInfo) {
     card.classList.add("card")
     card.appendChild(front)
     card.appendChild(back)
-    card.addEventListener( 'click', function() {
+    card.addEventListener('click', function () {
         card.classList.toggle('is-flipped');
-      });
-    
+    });
+
     return card
 
 }
 
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+
+const createPokemon = document.querySelector('#createPokemon')
+createPokemon.addEventListener('click', () => {
+    console.log("i clicked!")
+    const pokeName = prompt('What is your new Pokemon name?')
+    const pokeInfo = {
+        Height: getRandomInt(3, 40) + " decimeters",
+        Weight: getRandomInt(50, 1000) + " hectograms",
+        "Base Experience": getRandomInt(30, 300)
+    }
+    const newCard = createCard(900, pokeName, pokeInfo)
+    const mainNode = document.querySelector('main')
+    mainNode.insertBefore(newCard, mainNode.children[1])
+})
+
 async function main() {
-    const main = document.querySelector('main')
+    const mainNode = document.querySelector('main')
     const pokemon = await fechPokemon()
     console.log(pokemon)
     Object.entries(pokemon).forEach(([name, pokeData]) => {
         const pokeInfo = {
-            Species: pokeData.species.name,
-            Height: pokeData.height,
-            Weight: pokeData.weight,
+            Height: pokeData.height + " decimeters",
+            Weight: pokeData.weight + " hectograms",
             "Base Experience": pokeData.base_experience
         }
-        const card = createCard(name, pokeInfo)
-        main.appendChild(card)
+        const card = createCard(pokeData.id, name, pokeInfo)
+        mainNode.appendChild(card)
     })
 }
 
