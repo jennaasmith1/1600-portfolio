@@ -92,15 +92,20 @@ main {
 img {
     width: 225px;
     height: auto;
+
 }
 
 .card__face--front {
     background: rgb(61,125,202);
     background: radial-gradient(circle, rgba(61,125,202,1) 0%, rgba(0,58,112,1) 104%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .card__face--front, h2 {
-    font-size: 30px;
+    font-size: 35px;
     font-weight: bold;
 }
 
@@ -108,10 +113,13 @@ img {
     background: rgb(61,125,202);
     background: radial-gradient(circle, rgba(61,125,202,1) 0%, rgba(0,58,112,1) 104%);
     transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card__face--back, li {
-    font-size: 20px;
+    font-size: 18px;
     padding: 5px;
     list-style-type: none;
 }
