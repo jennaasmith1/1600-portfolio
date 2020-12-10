@@ -88,12 +88,21 @@ createPokemon.addEventListener('click', () => {
 async function main() {
     const mainNode = document.querySelector('main')
     const pokemon = await fechPokemon()
-    console.log(pokemon)
+    // console.log(pokemon)
     Object.entries(pokemon).forEach(([name, pokeData]) => {
+        const abilitiesToString = abilitiesRaw => {
+            const abilities = abilitiesRaw.map(ability => ability.ability.name)
+            return abilities.join(", ")
+        }
+        const hiddenAbilities = pokeData.abilities.filter(ability => ability.is_hidden)
+        const abilities = pokeData.abilities.filter(ability => !ability.is_hidden)
+        console.log(abilities, pokeData.abilities)
         const pokeInfo = {
             Height: pokeData.height + " decimeters",
             Weight: pokeData.weight + " hectograms",
-            "Base Experience": pokeData.base_experience
+            "Base Experience": pokeData.base_experience,
+            Abilities: abilitiesToString(abilities),
+            "Hidden Abilities": abilitiesToString(hiddenAbilities)
         }
         const card = createCard(pokeData.id, name, pokeInfo)
         mainNode.appendChild(card)
