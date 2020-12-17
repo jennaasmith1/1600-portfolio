@@ -18,9 +18,10 @@ for (let i = 0; i < species.length; i += 1) {
     let img = document.createElement("img")
 
     const urlSplit = species[i].url.split('/')
+    //https://swapi.co/api/species/5/
+    //["https:", "", "swapi.com", "api", "species", "5", ""]
     const id = urlSplit[urlSplit.length - 2]
-    img.src = `https://starwars-visualguide.com/assets/img/species/${id}.jpg`
-
+    img.src = `https://starwars-visualguide.com/assets/img/species/${id}.jpg`    
 
     let cardDiv = document.createElement('div')
     cardDiv.className = "card"
